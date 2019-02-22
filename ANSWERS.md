@@ -18,4 +18,4 @@ Higher Order Components (HOCs) are an advanced technique in React for reusing co
 
 - Inline Styles, which I suppose are useful in that you can write them right there in JavaScript and have all your styles, structure and interactivity in one component.
 
-- Styled Components, which are like Inline Styles on steroids. You can simply create a component with styles attached and use those components in your jsx markup.
+- Styled Components, which are like Inline Styles on steroids. You can simply create a component with styles attached and use those components in your jsx markup. You can also use other nifty features here like nested styling, and props detection for dynamic styling.
