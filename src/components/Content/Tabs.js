@@ -7,19 +7,14 @@ const Tabs = ({tabs, ...props}) => {
     <div className="tabs">
       <div className="topics">
         <span className="title">TRENDING TOPICS:</span>
-        {tabs.map(tab => <Tab tab={tab} key={tab.headline} {...props} />)}
+        {tabs.map(tab => <Tab tab={tab} key={tab} {...props} />)}
       </div>
     </div>
   );
 };
 
 Tabs.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.shape({
-    headline: PropTypes.string.isRequired,
-    tab: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired
-  })),
+  tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedTab: PropTypes.string.isRequired,
   selectTabHandler: PropTypes.func.isRequired
 }
