@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Tabs from './Tabs';
+import Carousel from '../Carousel/Carousel';
 import Cards from './Cards';
 
 // Importing our tab and card data. No need to change anything here.
@@ -41,6 +42,7 @@ export default class Content extends Component {
     return (
       <ContentContainer>
         <Tabs tabs={this.state.tabs} selectedTab={this.state.selected} selectTabHandler={this.changeSelected} />
+        <Carousel />
         <Cards cards={this.filterCards()} />
       </ContentContainer>
     );
