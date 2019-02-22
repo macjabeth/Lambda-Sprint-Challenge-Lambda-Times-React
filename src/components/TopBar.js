@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TopBar = () => {
   return (
-    <TopBarWrapper>
+    <TopBarContainer>
       <Container>
         <ContainerLeft>
           <span>TOPICS</span><span>SEARCH</span>
@@ -15,11 +15,11 @@ const TopBar = () => {
           <span>LOG IN</span>
         </ContainerRight>
       </Container>
-    </TopBarWrapper>
+    </TopBarContainer>
   )
 }
 
-const TopBarWrapper = styled.div`
+const TopBarContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;

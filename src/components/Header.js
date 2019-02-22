@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const Header = () => {
   return (
-    <HeaderWrapper>
+    <HeaderContainer>
       <DateSpan>MARCH 32, 2018</DateSpan>
       <h1>Lambda Times</h1>
       <TempSpan>98°</TempSpan>
-    </HeaderWrapper>
+    </HeaderContainer>
   )
 }
 
-const HeaderWrapper = styled.div`
+const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
