@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TopBar = () => {
+const TopBar = (props) => {
   return (
     <TopBarContainer>
       <Container>
@@ -11,8 +11,8 @@ const TopBar = () => {
         <ContainerCenter>
           <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
         </ContainerCenter>
-        <ContainerRight>
-          <span>LOG IN</span>
+        <ContainerRight onClick={props.toggleLogin}>
+          <span>LOG {props.username === '' ? 'IN' : 'OUT'}</span>
         </ContainerRight>
       </Container>
     </TopBarContainer>
@@ -28,6 +28,7 @@ const TopBarContainer = styled.div`
   position: fixed;
   height: 44px;
   background-color: #333;
+  z-index: 1;
 `;
 
 const Container = styled.div`

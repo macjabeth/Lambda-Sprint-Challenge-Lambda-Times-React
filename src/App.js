@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
+import SimpleStorage from 'react-simple-storage';
 import styled, { createGlobalStyle } from 'styled-components';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
-import Content from './components/Content/Content';
+import Router from './components/HOC/Router';
 
-const App = () => {
-  return (
-    <React.Fragment>
-      <GlobalStyle />
-      <AppContainer>
-        <TopBar />
-        <Header />
-        <Content />
-      </AppContainer>
-    </React.Fragment>
-  );
+export default class App extends Component {
+  state = {
+    username: '',
+    loggingIn: false
+  }
+
+  completeLogin = (username) => {
+    this.setState({
+      username
+    });
+  }
+
+  toggleLogin = () => {
+    this.setState(state => ({
+      loggingIn: !state.loggingIn
+    }), () => {
+      if (!this.state.loggingIn) {
+        this.setState({ username: '' });
+      }
+    })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <SimpleStorage parent={this} />
+        <GlobalStyle />
+        <AppContainer>
+          <TopBar username={this.state.username} toggleLogin={this.toggleLogin} />
+          <Header />
+          <Router {...this.state} completeLogin={this.completeLogin} />
+        </AppContainer>
+      </React.Fragment>
+    );
+  }
 }
 
 const AppContainer = styled.div`
@@ -72,5 +97,3 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 `;
-
-export default App;
